@@ -9,7 +9,7 @@ const fetching = (address) => {
   if (!address) {
     msgOne.textContent = 'You must provide an address';
   }
-  fetch(`http://localhost:3000/weather?address=${address}`).then((response) => {
+  fetch(`/weather?address=${address}`).then((response) => {
     response.json().then((data) => {
       if (data.location.length === undefined) {
         msgOne.textContent = 'Location not Found';

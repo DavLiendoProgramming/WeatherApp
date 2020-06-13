@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const hbs = require('hbs');
 const forecast = require('./utils/forecast');
+const port = process.env.PORT || 3000;
 //Define paths for Express config
 
 const publicPath = path.join(__dirname, '../public');
@@ -60,6 +61,6 @@ app.get('*', (req, res) => {
   res.render('404', { title: 'Error: 404', msg: 'Page not Found' });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Running server on port 3000');
 });
